@@ -1,0 +1,5 @@
+sudo docker run -d --restart=always \
+--name=yandex2mqtt
+-p 442:443 \
+-v /path/to/yandex2mqtt/config:/mnt/source/yandex2mqtt/config \
+smdmitry/yandex2mqtt
