@@ -7,6 +7,7 @@ WORKDIR /mnt/source/yandex2mqtt
 RUN npm install
 
 RUN sed -i 's/.\/config/.\/config\/config/g' /mnt/source/yandex2mqtt/app.js
+RUN sed -i 's/.\/loki.json/.\/config\/loki.json/g' /mnt/source/yandex2mqtt/db/access_tokens.js
 RUN openssl req -x509 -nodes -subj '/CN=localhost' -newkey rsa:4096 -keyout key.pem -out cert.pem -days 7300
 
 CMD npm start
